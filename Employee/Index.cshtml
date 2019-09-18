@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+
+    <script src="~/Scripts/plugins/mustache.min.js"></script>
+    <script src="~/Scripts/controller/employeeController.js"></script>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Status</td>
+        </tr>
+    </thead>
+    <tbody id="tblData"></tbody>
+</table>
+<script id="dataTemp" type="x-tmpl-mustache">
+    <tr>
+        <td>{{ID}}</td>
+        <td>{{Name}}</td>
+        <td><input type="number" class="txtAge" data-id="{{ID}}" value="{{Age}}" /></td>
+        <td>{{{Status}}}</td> @*HTML phải để 3 dấu ngoặc nhọn*@
+    </tr>
+</script>
